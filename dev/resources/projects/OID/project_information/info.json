@@ -1,0 +1,15 @@
+{
+  "site_info": {
+    "name": "Etude : OID"
+    ,"creation_date": "20/02/2021"
+    ,"desciption": "Projet d'etude : crée un site repondant a un appel d'offre et presenter chaqu'une des offres"
+    ,"language_type":{
+
+      "html": true
+      ,"css": true
+      ,"js": true
+      ,"php": false
+      ,"sql": false
+    }
+  }
+}
