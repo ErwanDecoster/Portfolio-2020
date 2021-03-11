@@ -1,0 +1,15 @@
+{
+  "site_info": {
+    "name": "Portfolio 2019"
+    ,"creation_date": "20/10/2019"
+    ,"desciption": "Premier portfolio"
+    ,"language_type":{
+
+      "html": true
+      ,"css": true
+      ,"js": false
+      ,"php": false
+      ,"sql": false
+    }
+  }
+}

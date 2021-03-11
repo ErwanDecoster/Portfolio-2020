@@ -1,0 +1,13 @@
+# Groupe 1
+User-agent: *
+Disallow: /images/
+
+# Groupe 2
+User-agent: *
+Disallow: /documents/
+
+# Groupe 3
+User-agent: *
+Allow: /
+
+sitemap: http://erwan.tech/sitemap.xml

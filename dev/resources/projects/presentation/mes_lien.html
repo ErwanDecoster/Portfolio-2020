@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style_blog.css">
+    <meta name="viewport" content="width=480, initial-scale=1">
+    <title></title>
+  </head>
+  <body>
+    <div class="bloc_principale">
+      <a class="back" href="http://www.erwan.tech">HOME</a>
+      <div class="bloc" id="0">
+        <h1>Mes Projets</h1>
+        <p>Sur cette page je vais vous presenter les differents projets que j'ai realiser et comment vous pourrez faire la meme chose chez vous.</p>
+        <div class="nav">
+          <a href="#1">Serveur domotique</a>
+          <a href="#2">Serveur web</a>
+        </div>
+      </div>
+      <div class="bloc" id="1">
+        <h2>Creation serveur domotique sur mon raspberry</h2>
+        <h3>Materiel utiliser</h3>
+        <ul>
+          <li>Un raspberry pi 4 model B 2Gb RAM</li>
+          <li>Carte micro SD samsumg 32Gb</li>
+          <li>Alimentation 2,4A</li>
+          <li>Cable USB B vers USB C</li>
+        </ul>
+        <ul>
+          <li>Pont Philips Hue</li>
+          <li>Anpoule Philips Hue</li>
+          <li>Interupteur Philips Hue</li>
+          <li>Yeelight Aurora Lightstrip Plus</li>
+          <li>Router WIFI</li>
+          <li>Carble RJ45</li>
+        </ul>
+        <h3>Contexte</h3>
+        <p>J'utisse des apareils de marque differente et j'aimerais que mon interupteur puise commander mes lampes de marque differente</p>
+        <h3>Mise en place</h3>
+        <p>
+          Pour cette realisation tout les appereil son neuf et non encore jamais servie
+        </p>
+        <p>
+          premierement nous allons flashé la carte SD avec le logiceil <a href="https://www.balena.io/etcher/">Balena Etcher</a> en utilisant un ISO de <a href="https://www.raspberrypi.org/downloads/raspbian/">Rasbian Buster Lite</a>,
+        </p>
+        <p>
+          une fois la carte flashé je crée un ficher sans extention se nomant simplement ssh se fichier permetra au raspberry de se preparer a une copnnection en SSH des son alumage
+        </p>
+        <p>
+          Maintenemt nous alons configurer le Wifi sur le raspberry pour pouvoir le pose dans un coin dans ma maison,
+          pour cela nous le branchon au routeur avec le cable RJ45, nous pouvoir l'allimenter
+        </p>
+        <p>
+          Sur notre ordinateur avec le logiciel <a href="https://mobaxterm.mobatek.net/download.html">Mobaxterm</a> dans tools network scanner je lance un scan pour trouver son IP sur le teste vous devriez voir un appareil utilisant le protocol ssh
+          je vais donc lancé une sesion SSH sur l'IP du rasberry (Mobaxterm me permet de retenir l'idantifiant de connection et le mot de passe)
+        </p>
+        <p>
+          par defaut l'idantifiant est :
+          <div class="commande">
+            Identifiant : pi <br>
+            mot de passe : raspberry <br>
+          </div>
+        </p>
+        <p>
+          je vous recommande fortement de <span class="texte_important">changé le mot de passe</span> et de le remplacer par un autre plus securiser
+          si un message vous indice vous idique un probleme avec le WIFI suivé les instructeur
+        </p>
+      </div>
+      <div class="bloc" id="2">
+        <h2>Creation serveur Web sur mon raspberry</h2>
+      </div>
+    </div>
+  </body>
+</html>

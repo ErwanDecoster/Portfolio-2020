@@ -1,0 +1,143 @@
+body{
+  background: #000;
+}
+.bloc_principale{
+  background: rgb(0,179,113);
+  background: linear-gradient(45deg, #23a6d5, #3F5BF6, #FA648F, #ee7752, #e73c7e, #5614b0, #2657eb, #3fada8, #64f38c);
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 400% 400%;
+	animation: gradient 120s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.presentation{
+  height: 500px;
+  width: 400px;
+  opacity: 0.95;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body,H1,H2,H3,H4,H5,H6,p{
+  padding: 0;
+  margin: 0;
+  font-family: Arial;
+}
+h4::selection{
+  background: #FA648F75;
+}
+h1::selection{
+  background: #FA648F75;
+}
+p::selection{
+  background: #FA648F75;
+}
+img::selection{
+  background: #FA648F75;
+}
+img{
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+.ornamentD,.ornamentG{
+  width: 125px;
+  position: absolute;
+  top: 0px;
+  pointer-events: none;
+}
+.ornamentG{
+  left: 0px;
+}
+.ornamentD{
+  right: 0px;
+  transform: rotate(90deg);
+}
+.avatar{
+  position: absolute;
+  top: 50px;
+  border-radius: 50%;
+  width: 100px;
+  pointer-events: none;
+}
+h1{
+  position: absolute;
+  top: 170px;
+  color: #313f47;
+  font-size: 25px;
+  letter-spacing: 2px;
+  margin: 0 0 1px 0;
+}
+p{
+  text-align: center;
+  position: absolute;
+  width: 80%;
+  font-size: 16px;
+}
+.fomation_actuelle{
+  top: 215px;
+}
+.mini_presentation{
+  top: 285px;
+}
+.mes_lien{
+  position: absolute;
+  top: 350px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+.lien{
+  position: relative;
+  height: 80px;
+  width: 100px;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+.lien:hover h4{
+  text-decoration: underline;
+}
+@media (prefers-color-scheme: dark){
+  .bloc_principale{
+    background: rgb(0,179,113);
+    background: linear-gradient(45deg, #23a6d5, #3F5BF6, #FA648F, #ee7752, #e73c7e, #5614b0, #2657eb, #3fada8, #64f38c);
+    background-size: 400% 400%;
+  	animation: gradient 120s ease infinite;
+  }
+  .presentation{
+    background-color: #121212;
+  }
+  a{
+    color: #ddd;
+  }
+  p{
+    color: #ddd;
+  }
+  h1{
+    color: #ddd;
+  }
+  .logo{
+    filter: invert(100%);
+  }
+  .ornamentG,.ornamentD{
+    filter: invert(100%);
+  }
+}
