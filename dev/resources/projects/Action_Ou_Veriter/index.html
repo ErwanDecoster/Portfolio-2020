@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Action ou Vérité</title>
+    <meta name="author" content="Erwan Decoster">
+    <meta name="description" content="Tirage aleatoire d'actions et de questions a realiser">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="theme-color" content="#bd8d8d">
+    <link rel="shortcut icon" href="resources/favicon-32x32.ico">
+    <link rel="apple-touch-icon" href="resources/icon-192x192.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/master.css">
+    <script src="script.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+  </head>
+  <body class="action_ou_verite">
+    <main id="swup" class="transition-fade">
+    <h1>Action ou Vérité</h1>
+    <form class="" action="tirage.php" method="post" id="divChamps">
+      <div class="subm">
+        <input type="text" id="player1" name="playerName1" minlength="3" maxlength="17" autocomplete="off" required>
+        <label for="player1">joueur 1</label>
+      </div>
+      <div class="subm">
+        <input type="text" id="player2" name="playerName2" minlength="3" maxlength="17" autocomplete="off" required>
+        <label for="player2">joueur 2</label>
+      </div>
+      <div class="subm" id="buttonDiv">
+        <button type="button" name="button" id="idButton">Ajouter un joueur</button>
+      </div>
+      <div class="subm">
+        <input type="submit" name="" value="Demarer">
+      </div>
+    </form>
+    <a class="bottom_link" href="add_data.php">Ajouter des données</a>
+  </main>
+  </body>
+  <script type="text/javascript">
+  const swup = new Swup();
+  </script>
+  <script type="text/javascript">
+  // animation du texte
+    const titleAnim = document.querySelector('h1');
+    let typewriter = new Typewriter(titleAnim, {
+      delay: 100,
+      loop: true,
+      deleteSpeed: 20,
+    });
+    typewriter.typeString('Action ou Action (;')
+    .pauseFor(300)
+    .deleteChars(9)
+    .typeString('Vérité')
+    .pauseFor(10000)
+    .start()
+  </script>
+  <script type="text/javascript">
+  // animation d'apparition des elements
+    ScrollReveal().reveal('.subm', {
+      interval: 100,
+      scale: 0,
+    })
+  </script>
+  <script type="text/javascript">
+  // récupération des éléments dans le html
+  const button = document.getElementById("idButton");
+  const removeButton = document.getElementById("removeButton");
+  const inputs = document.getElementsByTagName("input");
+  const buttonBefore = document.getElementById("buttonDiv");
+  let divChamps = document.getElementById("divChamps");
+  // supression button
+  function deleteSubm(parentId) {
+    const removableItem = document.getElementById(parentId);
+    while (removableItem.firstChild) {
+      removableItem.removeChild(removableItem.firstChild);
+    }
+    if (removableItem.parentNode) {
+      removableItem.parentNode.removeChild(removableItem);
+    }
+  }
+  // add bouton
+  button.addEventListener("click", function() {
+      // création de la div de base
+      let div = document.createElement("div");
+      div.classList.add("subm");
+      div.id = "bloc"+inputs.length;
+      // création de l'input texte
+      let input = document.createElement("input");
+      input.type = "text";
+      input.id = "player"+inputs.length;
+      input.name = "playerName"+inputs.length;
+      input.value = "";
+      input.minLength = "3";
+      input.maxLength = "17";
+      input.autocomplete = "off";
+      input.required =  "required";
+      // création du label lié à l'input texte
+      let label = document.createElement("label");
+      label.htmlFor = input.id;
+      label.textContent = inputs.length>0?"Joueur "+inputs.length:"Joueur";
+      let button = document.createElement("button");
+      button.classList.add("remove_button");
+      button.type = "button";
+      button.name = "button";
+      //button.setAttribute("deleteSubm(this.parentNode.id)");
+      button.setAttribute("onclick", "deleteSubm(this.parentNode.id)");
+      // On ajoute les éléments créé à la div de base
+      div.appendChild(input);
+      div.appendChild(label);
+      div.appendChild(button);
+      // On ajoute la div de base à la div mère
+      divChamps.insertBefore(div, buttonBefore);
+  });
+  </script>
+</html>

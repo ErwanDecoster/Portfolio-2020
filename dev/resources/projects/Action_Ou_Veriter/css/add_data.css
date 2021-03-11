@@ -1,0 +1,81 @@
+body{
+  transition: .2s;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 96%;
+  max-width: 800px;
+  min-height: 300px;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 1200px){
+  form{
+    top: 130px;
+    transform: translate(-50%, 0%);
+  }
+}
+div.radio{
+  width: 180px;
+  height: 40px;
+  position: relative;
+  margin-bottom: 50px;
+}
+p{
+  margin-bottom: 50px;
+  color: var(--color2);
+  text-align: center;
+  width: 98%;
+}
+input[type=radio].action,input[type=radio].verite{
+  position: absolute;
+  right: 50%;
+  top: 50%;
+}
+label.action,label.verite{
+  background-color: #ddd;
+}
+input[type=radio].action:checked ~ label.action,input[type=radio].verite:checked ~ label.verite{
+  background-color: #aaa;
+}
+input[type=radio].action:hover ~ label.action,input[type=radio].verite:hover ~ label.verite{
+  border: 1px solid var(--color-border);
+}
+div.add_action,div.add_verite,div.add_action label,div.add_verite label{
+  width: 500px;
+  max-width: 100%;
+}
+.add_action input[type=text],.add_verite input[type=text]{
+  width: 100%;
+}
+.add_action input,.add_verite input,.send_data input{
+  margin: auto;
+}
+label.action,label.verite{
+  user-select: none;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  padding: 6px;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  z-index: 2;
+}
+label.action{
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  border-right: 1px solid var(--color-border);
+  left: 0;
+}
+label.verite{
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-left: 1px solid var(--color-border);
+  right: 0;
+}

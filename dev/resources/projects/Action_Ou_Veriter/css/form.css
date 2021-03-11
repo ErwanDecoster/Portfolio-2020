@@ -1,0 +1,90 @@
+/* Form */
+form{
+  margin: 70px 0;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (min-width: 1200px){
+  form{
+    margin: 100px 20%;
+    min-height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+@media screen and (max-width: 1200px){
+
+}
+.subm{
+  position: relative;
+  margin: 0 auto;
+  min-width: 300px;
+  height: 100px;
+}
+.subm input,.subm button{
+  position: absolute;
+  background-color: #ffffff10;
+  outline: none;
+  border: none;
+  border: 1px solid var(--color-border);
+  color: var(--color1);
+  border-radius: 25px;
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  transition: .4s;
+}
+.subm input[type=submit]{
+  -webkit-appearance: none;
+  padding: 0;
+  font-weight: bold;
+  font-size: 22px;
+}
+.subm button{
+  padding: 0px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 22px;
+}
+.subm input:focus,.subm button:focus{
+  background-color: #ffffff20;
+  border: 2px solid var(--color-border);
+}
+.subm input[type=text]:focus:invalid{
+  border-color: red;
+}
+.subm input[type=text]:focus:valid{
+  border-color: green;
+}
+input[type=radio].verite:focus ~ label.verite,input[type=radio].action:focus ~ label.action{
+  border: 2px solid var(--color-border);
+}
+input:hover,.subm button:hover{
+  background-color: #ffffff20;
+  border-width: 2px;
+}
+.subm label{
+  position: absolute;
+  top: -6px;
+  padding: 10px 20px;
+  width: 300px;
+  letter-spacing: 1.5px;
+  font-size: 24px;
+  transition: .2s;
+  pointer-events: none;
+  text-align: center;
+  font-weight: bold;
+  z-index: 3;
+}
+.subm input:focus ~ label,.subm input:valid ~ label{
+  top: -30px;
+  font-size: 22px;
+  padding: 0;
+}

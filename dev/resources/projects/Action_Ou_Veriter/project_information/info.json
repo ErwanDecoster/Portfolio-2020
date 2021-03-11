@@ -1,0 +1,15 @@
+{
+  "site_info": {
+    "name": "Action ou verité"
+    ,"creation_date": "20/02/2021"
+    ,"desciption": "Jeu d'action ou verité aleatoire avec posibilité d'ajouter des actions et des verité"
+    ,"language_type":{
+
+      "html": true
+      ,"css": true
+      ,"js": true
+      ,"php": true
+      ,"sql": true
+    }
+  }
+}
